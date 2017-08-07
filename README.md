@@ -5,4 +5,4 @@ Techolution Bootcamp Labs For Angular 4
 2. install dependencies `npm install`
 3. Start: `npm start`
 4. Open up: localhost:4200
-
+5. Follow training instructions.
