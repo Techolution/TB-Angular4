@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  bootcampTitle: string =  'v3';
+  title: string =  'I\'m working!';
 }
