@@ -11,7 +11,7 @@ Techolution Bootcamp Labs For Angular 4
 4. Open up: localhost:4200 in a browser to verify things are working.
 
 ## Labs
-This git repo contains a serious of tags on the master branch.  At the beginning of each lab you will issue a command to checkout the lab as a branch: `git checkout -b l2 lab2`, for example.  You will then write your code for the lab in that branch. Before leaving that branch you must commit your code locally.  No code is ever pushed to the main github repo. 
+This git repo contains a series of tags on the master branch.  At the beginning of each lab you will issue a command to checkout the lab as a branch: `git checkout -b l2 lab2`, for example.  You will then write your code for the lab in that branch. Before leaving that branch you must commit your code locally.  No code is ever pushed to the main github repo. These commands will all be given to you so you do not need to stress about about understanding it.  But if you want to know what is going in this command, the `git checkout -b` part is telling get to create a new local branch and make it the current branch, `l2` is the name you are giving the branch, and `lab2` is the name of the tag that marked the code when it was in the correct state to begin the lab.
 
 If you are not very familiar with git this is how you can commit your code: 
 
