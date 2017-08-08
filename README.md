@@ -11,8 +11,13 @@ Techolution Bootcamp Labs For Angular 4
 4. Open up: localhost:4200 in a browser to verify things are working.
 
 ## Labs
-This git repo contains a series of tags on the master branch.  At the beginning of each lab you will issue a command to checkout the lab as a branch: `git checkout -b l2 lab2`, for example.  You will then write your code for the lab in that branch. Before leaving that branch you must commit your code locally.  No code is ever pushed to the main github repo. These commands will all be given to you so you do not need to stress about about understanding it.  But if you want to know what is going in this command, the `git checkout -b` part is telling get to create a new local branch and make it the current branch, `l2` is the name you are giving the branch, and `lab2` is the name of the tag that marked the code when it was in the correct state to begin the lab.
+Each lab has its own branch.  When starting a new lab you will run the git command to checkout the branch for the lab.  For example, if you are going to start lab2, you would run:
 
+```
+git checkout lab2
+```
+
+You should then add/commit any code changes that you make to this branch before moving to the next lab. 
 If you are not very familiar with git this is how you can commit your code: 
 
 ```
@@ -20,10 +25,10 @@ git add .
 git commit -m 'my special commit message'
 ```
 
-If you find that you get stuck and need to see the solution you may checkout the solution but make sure that you commit all of your code in the local lab branch first. Solutions are all tagged with '-solution' so the solution for lab2 would be checked like `git checkout -b l2s lab2-solution`.
+Each lab also has a solution which exists in a branch by the same name but with '-solution' added to it.  For example, the solution for lab2 could be checked out like this: 
 
-If you are not very familiar with git, type `git branch` when you're working in one of the labs and you will see a list of branches (one for each lab that you have created so far) with a little asterik by the lab you are currently working on. You will notice a branch called `master`.  This is the main line of code.  Do not make any code changes while you are on this master branch. This will keep everything clean.
+```
+git checkout lab2-solution
+```
 
-If you end up returning to a lab that you have previously completed you do not need to rerun the original command.  Instead, just run `git checkout [labBranchName]`.  So, if you created a branch named `l2` for the lab2 tag you would just run `git checkout l2`.  Easy peasy. 
-
-Each lab will give you the git command to run before starting the lab even though you could guess it using the conventions explained.
+Make sure that you commit all of your code in the lab you are working on before checking out the solution!  ( you may also discard the changes if you know how to do so).
