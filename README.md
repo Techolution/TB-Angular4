@@ -14,3 +14,4 @@ Techolution Bootcamp Labs For Angular 4
 This git repo contains a serious of tags. 
 
 labA
+labB
