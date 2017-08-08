@@ -15,8 +15,10 @@ This git repo contains a serious of tags on the master branch.  At the beginning
 
 If you are not very familiar with git this is how you can commit your code: 
 
-`git add .`
-`git commit -m 'my special commit message'`
+```
+git add .
+git commit -m 'my special commit message'
+```
 
 If you find that you get stuck and need to see the solution you may checkout the solution but make sure that you commit all of your code in the local lab branch first. Solutions are all tagged with '-solution' so the solution for lab2 would be checkout like `git checkout -b l2s lab2-solution`.
 
