@@ -157,6 +157,12 @@
                     div element for each color. Noticd the use of the let keyword to declare a local color variable for the 
                     template.
                 </p>
+                <p>
+                    Note: loading data inside of a constructor is a bad practice because it can make testing very difficult and the 
+                    component is not guranteed to be fully initialized yet.  Angular components have a life cycle hook ngOnit which is 
+                    guranteed to run only after the component is initialized and bindings inside of the template, like @ngFor, are set up. 
+                    In future learning, you will implement an ngOnit hook.
+                </p>
             </li>
             <li>Now add a little css.  The component decorator has a styles property. Fill it with this and reload the browser:
                  <pre><code>
