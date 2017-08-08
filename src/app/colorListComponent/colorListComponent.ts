@@ -5,8 +5,17 @@ import { Color } from './color.model';
     selector: 'color-list',
     template: `
         <h3>{{title}}</h3>
-        <div *ngFor="let color of colors">{{color.label}}</div>
-    `
+        <div *ngFor="let color of colors" (click)="showId(color.id)">{{color.label}}</div>
+    `,
+    styles: [`
+        div {
+            background-color:gray;
+            border: 5px 10px;
+            color:#fff;
+            margin:1px;
+            padding:10px;
+        }
+    `]
 })
 export class ColorListComponent {
     colors: Color[];
@@ -30,5 +39,9 @@ export class ColorListComponent {
                 label: 'yellow'
             }
         ];
+    }
+
+    showId(id: number): void {
+        alert(id);
     }
 }
