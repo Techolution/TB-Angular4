@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style type="text/css">
+            pre {
+                background-color:#eee;
+                border: 1px dashed #ccc;
+                padding:10px;
+            }
+            .inline-code {
+                background-color:#eee;
+                padding:10px;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Lab 3 Tutorial</h1>
+        <h3>Purpose of this lab</h3>
+        <ul>
+            <li>Learn how to create an Angular component.</li>
+            <li>Start to see why components are the building blocks of an angular app.</li>
+            <li>Estimated Time: 20 minutes</li>
+        </ul>
+       <p>Do not use the angular-cli generator for this exercise!</p>
+       <h3>Begin</h3>
+        <ol>
+            <li>Create a new folder named color-list.component in src/app</li>
+            <li>In this new directory create a new file named: color-list.component.ts
+                <p>
+                    <em>The ts file extension means typescript.  Angular is written in typescript 
+                        and compiled into javascript.  This compilation is handled for us by the 
+                        angular-cli tool setup that uses webpack.</em>
+                </p>
+            </li>
+            <li>
+                Open up color-list.component.ts and define the following class:
+                <pre><code>
+                    export class ColorListComponent {
+                        colors: Color[];
+                        title: string = “Favorite Colors”;
+                        constructor() {}
+                    }
+                </code></pre>
+                <p>Note that this is just a simple ES6/Typescript class. At this point it has no association with the Angular app.</p>
+            </li>
+            <li>
+                In order to turn a class into an Angular component you must use the @component decorator which is part of the core angular.
+                Import Component into the file:
+                <pre><code>
+                    import { Component } from '@angular/core';
+                </code></pre>
+            </li>
+            <li>
+                Next, you need to use the Component decorator:
+                <pre><code>
+                    import { Component } from '@angular/core';
+
+                    @Component({
+                        selector: 'color-list',
+                        template: `
+                            &lt;h3&gt;{{title}}&lt;/h3&gt;
+                            &lt;div *ngFor="let color of colors" "&gt;{{color.label}}&lt;/div&gt;
+                        ` 
+                    })
+                    export class ColorListComponent {
+                        colors: Color[];
+                        title: string = “Favorite Colors”;
+                        constructor() {}
+                    }
+                </code></pre>
+                <p>We call @Component with an object of meta data and place it right before the class.  This tells angular 
+                    to turn ColorListComponent into an Angular component.  The <span class="inline-code">selector: 'color-list'</span> setting means
+                    that this component will be added to an html template using the following html selector: 
+                    <code>&lt;color-list&gt;&lt;/color-list&gt;</code>
+                </p>
+                <p>
+                    The template property is a simple string.  Note that we are using ES6 backticks instead of parenthesis.  This allows us to write the html on 
+                    multiple lines.  
+                </p>
+                <p>
+                    It is also possible to make the template external using <span class="inline-code">templateUrl: './color-list.component.html</span> 
+                    instead ( assuming that you had an html file named color-list.component.html).  
+                </p>
+                <p>You may have noticed that we are setting the colors property to an array of Color types.  But where is this type coming from?
+                    We will define it next.
+                </p>
+            </li>
+            <li>
+                In the same directory as our new component, create another file named color.model.ts with the following code:
+                <pre><code>
+                    export class Color {
+                        id: number;
+                        label: string;
+                    }
+                </code></pre>
+            </li>
+            <li>Now import this model into your component so that your typeing makes sense:
+                 <pre><code>
+                    import { Color } from './color.model';
+                </code></pre>
+            </li>
+            <li>
+                Open up app.component.html and add the <code>&lt;color-list&gt;&lt;/color-list&gt;</code> selector to it.
+            </li>
+            <li>Navigate to localhost:4200.  You should see an empty screen.  Open up the browser console and note the error message.
+                This is happening because we have not yet added this component to our angular app.
+            </li>
+            <li>
+                Add our new component to the app by opening up app.module.ts, importing the new component at the top, and adding 
+                ColorListComponent to the declarations array after AppComponent.  Reload the page at localhost:4200.  You should
+                now see the title "Favorite Colors" displaying at the top! yeah!
+                <p>Notice in app.component.ts that there is an array of color items.  We want our component to show these colors.
+                    Normally, we would have a service get these for us and pass them to the component.  For this lab we will just use 
+                    them directly in the component in the next step.
+                </p>
+            </li>
+            <li>
+                Copy the data of colors from app.component.ts and use them to set the colors array in the constructor of the component
+                and reload the browser:
+                <pre><code>
+                    import { Component } from '@angular/core';
+
+                    @Component({
+                        selector: 'color-list',
+                        template: `
+                            &lt;h3&gt;{{title}}&lt;/h3&gt;
+                            &lt;div *ngFor="let color of colors" "&gt;{{color.label}}&lt;/div&gt;
+                        ` 
+                    })
+                    export class ColorListComponent {
+                        colors: Color[];
+                        title: string = “Favorite Colors”;
+                        constructor() {
+                            this.colors = [
+                                {
+                                    id: 1,
+                                    label: 'blue'
+                                },
+                                {
+                                    id: 2,
+                                    label: 'red'
+                                },
+                                {
+                                    id: 3,
+                                    label: 'green'
+                                },
+                                {
+                                    id: 4,
+                                    label: 'yellow'
+                                }
+                            ];
+                        }
+                    }
+                </code></pre>
+                <p>How is this happening?  In the template you will notice *ngFor="let color of colors".  This is called
+                    a structural directive in Angular and it iterates through all items in the colors array and creates a new 
+                    div element for each color. Noticd the use of the let keyword to declare a local color variable for the 
+                    template.
+                </p>
+            </li>
+            <li>Now add a little css.  The component decorator has a styles property. Fill it with this and reload the browser:
+                 <pre><code>
+                     @Component({
+                        selector: 'color-list',
+                        styles: [`
+                            div {
+                                background-color:gray;
+                                border: 5px 10px;
+                                color:#fff;
+                                margin:1px;
+                                padding:10px;
+                            }
+                        `]
+                        template: `
+                            &lt;h3&gt;{{title}}&lt;/h3&gt;
+                            &lt;div *ngFor="let color of colors" "&gt;{{color.label}}&lt;/div&gt;
+                        ` 
+                    })
+                </pre></code>
+                <p>Notice that styles is an array with a string of css. We use backticks again in the array so that we can write 
+                    the css on different lines for readability.  You may also set this to styleUrls which takes an array of strings that 
+                    point to css files.  
+            </li>
+        
+            <li>
+                Next lets add some user interaction. Update the div element with the *ngFor directive to look like this:
+                 <pre><code>
+                     @Component({
+                        selector: 'color-list',
+                        styles: [`
+                            div {
+                                background-color:gray;
+                                border: 5px 10px;
+                                color:#fff;
+                                margin:1px;
+                                padding:10px;
+                            }
+                        `]
+                        template: `
+                            &lt;h3&gt;{{title}}&lt;/h3&gt;
+                            &lt;div *ngFor="let color of colors" (click)="showId(color.id) "&gt;{{color.label}}&lt;/div&gt;
+                        ` 
+                    })
+                </pre></code>
+                <p>Next add a method called showId to the component class like this:</p>
+                <pre><code>
+                    showId(id: number): void {
+                        alert(id);
+                    }    
+                </code></pre>
+                <p>Open the browser and click on the colors.  You should see a popup showing you the id</p>
+            </li>
+        </ol>
+    </body>
+</html>
