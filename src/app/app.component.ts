@@ -6,5 +6,22 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title: string =  'I\'m working!';
+  data: [
+    {
+      id: 1,
+      label: 'blue'
+    },
+    {
+      id: 2,
+      label: 'red'
+    },
+    {
+      id: 3,
+      label: 'green'
+    },
+    {
+      id: 4,
+      label: 'yellow'
+    }
+  ]
 }
