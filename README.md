@@ -31,4 +31,6 @@ Each lab also has a solution which exists in a branch by the same name but with 
 git checkout lab2-solution
 ```
 
-Make sure that you commit all of your code in the lab you are working on before checking out the solution!  ( you may also discard the changes if you know how to do so).
+Make sure that you commit all of your code in the lab you are working on before checking out the solution!  ( you may also discard the changes if are familair enough with git to do so).
+
+You will not need to stop your server when changing branches unless otherwise stated.  Changing branches will simply change how the current code looks and your angular app will recompile based on it. 
