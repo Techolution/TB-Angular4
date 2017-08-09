@@ -9,6 +9,7 @@ Techolution Bootcamp Labs For Angular 4
 2. install dependencies `npm install`
 3. Start: `npm start`
 4. Open up: localhost:4200 in a browser to verify things are working.
+5. Install json-server globally: `npm install -g json-server`
 
 ## Labs
 Each lab has its own branch.  When starting a new lab you will run the git command to checkout the branch for the lab.  For example, if you are going to start lab2, you would run:
