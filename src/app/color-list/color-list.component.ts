@@ -5,7 +5,9 @@ import { Color } from './color.model';
     selector: 'color-list',
     template: `
         <h3>{{title}}</h3>
-        <div *ngFor="let color of colors" (click)="showId(color.id)">{{color.label}}</div>
+        <div *ngFor="let color of colors" (click)="showId(color.id)">
+            {{color.label}}<span *ngIf="color.favorite">Favorite!</span>
+        </div>
     `,
     styles: [`
         div {
@@ -24,18 +26,22 @@ export class ColorListComponent {
         this.colors = [
             {
                 id: 1,
+                favorite: false,
                 label: 'blue'
             },
             {
                 id: 2,
+                favorite: true,
                 label: 'red'
             },
             {
                 id: 3,
+                favorite: false,
                 label: 'green'
             },
             {
                 id: 4,
+                favorite: false,
                 label: 'yellow'
             }
         ];
