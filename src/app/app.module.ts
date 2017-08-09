@@ -9,9 +9,9 @@ import { EmployeeListComponent } from './employee-list/employee-list.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 
 const routes: Routes = [
-  { path: '', component: DashboardComponent },
+  { path: 'dashboard', component: DashboardComponent },
   { path: 'employees', component: EmployeesComponent },
-  { path: '**', redirectTo: '' }
+  { path: '**', redirectTo: 'dashboard' }
 ];
 
 @NgModule({

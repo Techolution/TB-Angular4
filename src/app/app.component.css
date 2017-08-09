@@ -1,13 +1,31 @@
 header {
     background-color:rgb(66, 244, 197);
     box-shadow: 1px 0px 4px 0px #333;
+    display:flex;
 }
 
 h1 {
+    flex:1 1 auto;
     margin:0px;
     padding:10px 20px;
+}
+
+nav {
+    background-color:rgb(49, 183, 147);
+    display:flex;
+    flex: 0 0 400px;
+}
+
+nav a {
+    color:white;
+    flex: 1 1 auto;
+    font-size:20px;
+    line-height: 53px;
+    text-decoration: none;
+    text-align: center;
 }
 
 section {
     padding:20px;
 }
+
