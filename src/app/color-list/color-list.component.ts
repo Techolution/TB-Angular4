@@ -3,21 +3,9 @@ import { Color } from './color.model';
 
 @Component({
     selector: 'color-list',
-    template: `
-        <h3>{{title}}</h3>
-        <div *ngFor="let color of colors" (click)="showId(color.id)">
-            {{color.label}}<span *ngIf="color.favorite">Favorite!</span>
-        </div>
-    `,
-    styles: [`
-        div {
-            background-color:gray;
-            border: 5px 10px;
-            color:#fff;
-            margin:1px;
-            padding:10px;
-        }
-    `]
+    templateUrl: './color-list.component.html',
+    styleUrls: ['./color-list.component.css']
+    //styleUrls: ['../app.component.css']
 })
 export class ColorListComponent {
     colors: Color[];

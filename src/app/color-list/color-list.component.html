@@ -1,0 +1,4 @@
+<h3>{{title}}</h3>
+<div *ngFor="let color of colors; let i = index;" (click)="showId(color.id)">
+    <span>{{i}} - {{color.label}}</span><span *ngIf="color.favorite"> - Favorite!</span>
+</div>
