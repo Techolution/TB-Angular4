@@ -6,7 +6,12 @@ import {Employee} from '../employee.model';
   template: `
     <employee-list></employee-list>
     <employee-detail></employee-detail>
-  `
+  `,
+  styles: [`
+    :host {
+      display:flex;
+    }
+  `]
 })
 export class EmployeesComponent implements OnInit {
 
