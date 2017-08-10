@@ -10,9 +10,7 @@ export class AppComponent {
 
     numbers: number[];
 
-    constructor(private myFirstService: MyFirstService) {
-
-    }
+    constructor(private myFirstService: MyFirstService) {}
 
     ngOnInit() {
       this.numbers = this.myFirstService.getNumbers();

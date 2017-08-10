@@ -1,11 +1,18 @@
 import { Injectable } from '@angular/core';
-import { NUMBERS } from './numbers';
+import { Http } from '@angular/http';
+import 'rxjs/add/operator/toPromise';
 
 export class MyFirstService {
 
-    constructor() {}
+    readonly NUMBERS_URL: string = 'data.json';
 
-    getNumbers(): number[] {
-        return NUMBERS;
+    numbers: number[] = [];
+
+    constructor(private http: Http) {}
+
+    getNumbers(): Promise<number[]> {
+        return this.http.get(this.NUMBERS_URL)
+                .toPromise()
+                .then(response => response.json().numbers);
     }
 }
