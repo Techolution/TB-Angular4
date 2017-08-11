@@ -8,7 +8,9 @@ import { Item } from './item.model';
              (click)="select(item)"
              [class.selected]="item === selected">
             <span>{{item.label}}</span>
-            <span><button (click)="deleteRequest.emit(item)">x</button></span>
+            <span>
+                <button (click)="deleteRequest.emit(item)">x</button>
+            </span>
         </div>
     `,
     styles: [`

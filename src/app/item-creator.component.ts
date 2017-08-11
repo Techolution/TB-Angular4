@@ -4,7 +4,8 @@ import { Component, EventEmitter, Output } from '@angular/core';
     selector: 'item-creator',
     template: `
         <input [(ngModel)]="value">
-        <button (click)="handleClick()">Create Item</button>
+        <button (click)="handleClick()"
+                [disabled]="!value.length">Create Item</button>
     `
 })
 export class ItemCreatorComponent {
