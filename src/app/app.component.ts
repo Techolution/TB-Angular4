@@ -13,6 +13,8 @@ export class AppComponent {
     constructor(private myFirstService: MyFirstService) {}
 
     ngOnInit() {
-      this.numbers = this.myFirstService.getNumbers();
+      this.myFirstService.getNumbers().then((data) => {
+        this.numbers = data;
+      });
     }
 }
