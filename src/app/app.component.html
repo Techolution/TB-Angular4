@@ -2,4 +2,5 @@
 <div style="text-align:center">
   <h1>{{title}}</h1>
   <p *ngFor="let item of numbers">{{item}}</p>
+  <em *ngIf="error">An error has occurred! - {{error | json}}</em>
 </div>

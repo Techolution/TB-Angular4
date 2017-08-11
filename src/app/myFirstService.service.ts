@@ -6,7 +6,7 @@ import 'rxjs/add/operator/toPromise';
 @Injectable()
 export class MyFirstService {
 
-    readonly NUMBERS_URL: string = '/src/data.json';
+    readonly NUMBERS_URL: string = 'http://localhost:3000/numbers';
 
     numbers: number[] = [];
 
@@ -15,6 +15,11 @@ export class MyFirstService {
     getNumbers(): Promise<number[]> {
         return this.http.get(this.NUMBERS_URL)
                 .toPromise()
-                .then(response => response.json().numbers);
+                .then(response => response.json())
+                .catch(this.handleError);
     }
+
+    handleError(error: any): Promise<any> {
+        return Promise.reject(error.message || error);
+    } 
 }

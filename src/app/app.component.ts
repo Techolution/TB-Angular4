@@ -7,14 +7,14 @@ import { MyFirstService } from './myFirstService.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-
+    error: any;
     numbers: number[];
 
     constructor(private myFirstService: MyFirstService) {}
 
     ngOnInit() {
-      this.myFirstService.getNumbers().then((data) => {
-        this.numbers = data;
-      });
+      this.myFirstService.getNumbers()
+            .then((data) => { this.numbers = data; })
+            .catch((e) => { this.error = e;});
     }
 }
