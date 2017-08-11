@@ -5,12 +5,14 @@ import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { ItemListComponent } from './item-list.component';
 import { ItemCreatorComponent } from './item-creator.component';
+import { TodayDateComponent } from './today-date.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ItemCreatorComponent,
-    ItemListComponent
+    ItemListComponent,
+    TodayDateComponent
   ],
   imports: [
     BrowserModule,

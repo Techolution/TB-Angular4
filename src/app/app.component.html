@@ -1,7 +1,11 @@
-<item-list [items]="items" 
-           (deleteRequest)="deleteItem($event)"
-           (itemSelected)="onItemSelected($event)"></item-list>
-<item-creator (createRequest)="addItem($event)"></item-creator>
-<p *ngIf="selectedItem">
-  <em>The item {{selectedItem?.label}} is selected!</em>
-</p>
+<section>
+    <today-date></today-date>
+    <item-list [items]="items" 
+               (deleteRequest)="deleteItem($event)"
+               (itemSelected)="onItemSelected($event)"></item-list>
+    <item-creator (createRequest)="addItem($event)"></item-creator>
+    <p *ngIf="selectedItem">
+      <em>The item {{selectedItem?.label}} is selected!</em>
+    </p>
+</section>
+
