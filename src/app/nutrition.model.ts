@@ -8,17 +8,11 @@ export enum FoodGroup {
 
 export class Nutrition {
     constructor(
-        public cholesterol: number,
-        public foodGroup: FoodGroup,
+        public foodGroup: number,
         public label: string,
+        public cholesterol: number,
         public saturatedFat: number,
-        public sodium: number,
-        public totalFat: number,
-        public transFat: number
+        public transFat: number,
+        public totalFat: number
     ) {}
 }
-
-//input
-//select
-//checkbox
-//radio

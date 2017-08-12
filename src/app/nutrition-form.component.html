@@ -1,0 +1,70 @@
+<form (ngSubmit)="onSubmit()" 
+      #nutritionForm="ngForm"
+      *ngIf="!submitted">
+    <h3>Nutrition Information</h3>
+    <div class="form-group">
+        <label>Label:</label>
+        <input name="label" 
+               type="text" 
+               required 
+               [(ngModel)]="model.label"
+               #label="ngModel"> 
+        <span [hidden]="label.valid || label.pristine" 
+              class="required-warning">*required!
+        </span>
+    </div>
+    <div class="form-group">
+        <label>Food Group:</label>
+        <select [(ngModel)]="model.foodGroup"
+                name="foodGroup">
+            <option *ngFor="let fg of foodGroups" [value]="fg.id">{{fg.group}}</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <label>Cholesteral:</label>
+        <input name="cholesterol" 
+               type="text" 
+               required 
+               [(ngModel)]="model.cholesterol"
+               #cholesterol="ngModel">
+        <span [hidden]="cholesterol.valid || cholesterol.pristine" 
+              class="required-warning">*required!
+        </span>
+    </div>
+    <div class="form-group">
+        <label>SaturatedFat:</label>
+        <input  name="saturatedFat" 
+                type="text" 
+                required 
+                [(ngModel)]="model.saturatedFat"
+                (input)="updateTotalFat()"
+                #saturatedFat="ngModel">
+        <span [hidden]="saturatedFat.valid || saturatedFat.pristine" 
+                class="required-warning">*required!
+        </span>
+    </div>
+    <div class="form-group">
+        <label>TransFat:</label>
+        <input  name="transFat"
+                type="text" 
+                required 
+                [(ngModel)]="model.transFat"
+                (input)="updateTotalFat()"
+                #transFat="ngModel">
+        <span [hidden]="transFat.valid || transFat.pristine" 
+              class="required-warning">*required!
+        </span>
+    </div>
+    <div class="form-group">
+        <label>TotalFat:</label>
+        <span>{{model.totalFat}}</span>
+    </div>
+    <div class="form-group">
+        <button type="submit"
+                [disabled]="!nutritionForm.form.valid">Submit</button>
+        <button type="reset"
+                (click)="nutritionForm.reset(); reset();">Reset</button>
+    </div>
+</form>
+<em *ngIf="submitted">Thank you.  Your form has been submitted</em>
+
