@@ -13,8 +13,8 @@ export class AppComponent {
     constructor(private myFirstService: MyFirstService) {}
 
     ngOnInit() {
-      this.myFirstService.getNumbers()
-            .then((data) => { this.numbers = data; })
-            .catch((e) => { this.error = e;});
+      let $numbers = this.myFirstService.getNumbers();
+
+      $numbers.subscribe( numbers => this.numbers = numbers);
     }
 }
