@@ -5,7 +5,20 @@ export class TBAngular4Page {
     return browser.get('/');
   }
 
+  getDeleteBtn(index) {
+    return element.all(by.css('item-list > .item > .deleteBtn')).get(index);
+  }
+
+  getItemListNode() {
+    return element(by.css('item-list'));
+  }
+
+  getItemLabels() {
+    return element.all(by.css('item-list > .item > span'));
+  }
+
   getParagraphText() {
     return element(by.css('app-root h1')).getText();
   }
+
 }
