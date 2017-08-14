@@ -65,6 +65,7 @@
         <button type="reset"
                 (click)="nutritionForm.reset(); reset();">Reset</button>
     </div>
+    {{model | json}}
 </form>
 <em *ngIf="submitted">Thank you.  Your form has been submitted</em>
 

@@ -35,6 +35,6 @@ export class NutritionFormComponent {
     }
 
     updateTotalFat() {
-        this.model.totalFat = this.model.saturatedFat + this.model.transFat;
+        this.model.totalFat = +this.model.saturatedFat + +this.model.transFat;
     }
 }
