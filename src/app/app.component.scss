@@ -14,7 +14,7 @@ p {
             color: red;
             transition: all .5s;
             &:hover {
-                background-color: $bgColor1;
+                background-color: $bg-color1;
                 color:black;
             }
         }
