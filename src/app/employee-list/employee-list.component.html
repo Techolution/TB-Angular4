@@ -1,3 +1,5 @@
-<p>
-  Employee List
+<p *ngFor="let employee of employees"
+   (click)="select(employee)"
+   [class.selected]="employee === selectedEmployee">
+  <span> {{employee.name}}</span>
 </p>

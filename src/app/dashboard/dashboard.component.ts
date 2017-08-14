@@ -1,23 +1,32 @@
 import { Component, OnInit } from '@angular/core';
+import {Employee} from '../employee.model';
+import { EmployeesService } from '../employees.service';
 
 @Component({
   selector: 'dashboard',
   templateUrl: './dashboard.component.html',
   styles: [`
-    div {
-      background-color: rgb(227, 252, 245);
-      box-shadow: 1px 0px 4px 0px #333;
-      margin: 0px 10px;
-      padding:0px 20px;
+    :host {
+      align-items: center;
+      display: flex;
+      flex-direction: column;
+    }
+    h3, employee-list {
+      flex: 1 1 auto;
     }
   `]
 })
 export class DashboardComponent implements OnInit {
   
-  constructor() { }
+  employees: Employee[];
+
+  constructor(private employeesService: EmployeesService) { }
 
   ngOnInit() {
-
+    this.employeesService.getEmployees().subscribe(
+      (employees) => { this.employees = employees; },
+      (error) => { console.error(error.statusText); }
+    );
   }
 
 }

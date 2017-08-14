@@ -1,11 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import {Employee} from '../employee.model';
+import { EmployeesService } from '../employees.service';
 
 @Component({
   selector: 'employees',
   template: `
-    <employee-list></employee-list>
-    <employee-detail></employee-detail>
+    <employee-list [employees]="employees" (employeeSelected)="selectedEmployee = $event;"></employee-list>
+    <employee-detail [employee]="selectedEmployee"></employee-detail>
   `,
   styles: [`
     :host {
@@ -15,10 +16,17 @@ import {Employee} from '../employee.model';
 })
 export class EmployeesComponent implements OnInit {
 
-  constructor() { }
+  employees: Employee[];
+
+  selectedEmployee: Employee;
+
+  constructor(private employeesService: EmployeesService) {}
 
   ngOnInit() {
-
+    this.employeesService.getEmployees().subscribe(
+      (employees) => { this.employees = employees; },
+      (error) => { console.error(error.statusText); }
+    );
   }
 
 }

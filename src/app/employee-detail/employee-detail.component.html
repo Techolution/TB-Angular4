@@ -1,3 +1,7 @@
-<p>
-    Employee Form
-</p>
+<div *ngIf="!employee"><em>Please select an employee to see details</em></div>
+
+<div *ngIf="employee">
+    <form>
+        <p>Name: {{employee.name}}</p>
+    </form>
+</div>
