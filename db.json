@@ -23,6 +23,16 @@
       "name": "Jackson",
       "employeeOfTheMonth": true,
       "nickName": "Jack"
+    },
+    {
+      "id": 9,
+      "name": "Henry",
+      "employeeOfTheMonth": false
+    },
+    {
+      "id": 11,
+      "name": "Reggie",
+      "employeeOfTheMonth": false
     }
   ]
 }
