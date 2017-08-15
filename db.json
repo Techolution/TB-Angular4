@@ -2,14 +2,14 @@
   "employees": [
     {
       "id": 3,
-      "name": "Pavelly",
+      "name": "Pavell",
       "employeeOfTheMonth": true,
       "nickName": "Pasha"
     },
     {
       "id": 6,
       "name": "Robert",
-      "employeeOfTheMonth": true,
+      "employeeOfTheMonth": false,
       "nickName": "Bobby"
     },
     {
@@ -21,7 +21,7 @@
     {
       "id": 8,
       "name": "Jackson",
-      "employeeOfTheMonth": false,
+      "employeeOfTheMonth": true,
       "nickName": "Jack"
     }
   ]
