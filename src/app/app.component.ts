@@ -31,7 +31,7 @@ export class AppComponent {
       return item.id !== idToDelete
     });
 
-    if ( this.selectedItem.id === idToDelete ){ this.selectedItem = null }
+    if ( this.selectedItem && this.selectedItem.id === idToDelete ){ this.selectedItem = null }
     
   }
 
