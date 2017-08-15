@@ -20,13 +20,19 @@ export class DashboardComponent implements OnInit {
   
   employees: Employee[];
 
+  selectedEmployee: Employee;
+
   constructor(private employeesService: EmployeesService) { }
 
   ngOnInit() {
-    this.employeesService.getEmployees().subscribe(
+    this.employeesService.getAll().then(
       (employees) => { this.employees = employees; },
       (error) => { console.error(error.statusText); }
     );
+  }
+
+  onSelectedEmployee(employee:Employee) {
+    this.selectedEmployee = employee;
   }
 
 }

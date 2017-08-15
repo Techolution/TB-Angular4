@@ -1,3 +1,9 @@
 <h3>Dashboard</h3>
-<employee-list [employees]="employees"></employee-list>
+<employee-list [employees]="employees"
+               (employeeSelected)="onSelectedEmployee($event)">
+</employee-list>
+<p *ngIf="selectedEmployee">
+    {{selectedEmployee.name}} {{selectedEmployee.employeeOfTheMonth ? 'is' : ' is not '}} an employee of the month.
+</p>
+
 

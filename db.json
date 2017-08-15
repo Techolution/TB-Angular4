@@ -1,7 +1,28 @@
 {
   "employees": [
-    { "id": 1, "name": "Jason", "employeeOfTheMonth": false, "nickName": "Jay"},
-    { "id": 2, "name": "Alice", "employeeOfTheMonth": false },
-    { "id": 3, "name": "Pavel", "employeeOfTheMonth": false, "nickName": "Pasha"}
+    {
+      "id": 3,
+      "name": "Pavelly",
+      "employeeOfTheMonth": true,
+      "nickName": "Pasha"
+    },
+    {
+      "id": 6,
+      "name": "Robert",
+      "employeeOfTheMonth": true,
+      "nickName": "Bobby"
+    },
+    {
+      "id": 7,
+      "name": "Jason",
+      "employeeOfTheMonth": false,
+      "nickName": "Jay"
+    },
+    {
+      "id": 8,
+      "name": "Jackson",
+      "employeeOfTheMonth": false,
+      "nickName": "Jack"
+    }
   ]
 }

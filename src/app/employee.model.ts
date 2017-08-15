@@ -1,6 +1,10 @@
 export class Employee {
-    employeeOfTheMonth: boolean;
-    id: number;
-    name: string;
-    nickName?: string;
+
+    constructor(
+        public id: number,
+        public name: string,
+        public employeeOfTheMonth: boolean,
+        public nickName?: string
+    ) {}
+    
 }

@@ -1,5 +1,5 @@
 <p *ngFor="let employee of employees"
    (click)="select(employee)"
-   [class.selected]="employee === selectedEmployee">
+   [class.selected]="employee?.id === selectedEmployee?.id">
   <span> {{employee.name}}</span>
 </p>
