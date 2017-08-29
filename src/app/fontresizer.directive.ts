@@ -2,11 +2,12 @@ import {
     Directive, 
     ElementRef, 
     HostListener,
-    Input } 
+    Input,
+    OnInit } 
 from '@angular/core';
 
 @Directive({ selector: '[fontResizer]' })
-export class FontResizerDirective {
+export class FontResizerDirective implements OnInit{
 
     readonly SIZE_UNIT: string = "px";
 
@@ -20,6 +21,10 @@ export class FontResizerDirective {
     fontSize: number;
 
     constructor(public el: ElementRef) { 
+        
+    }
+
+    ngOnInit() {
         this.fontSize = this.defaultSize || 16;
         this.resize();
     }
