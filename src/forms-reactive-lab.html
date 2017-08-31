@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head></head>
+<body>
+    <h1>Angular 4 Reactive Forms Lab</h1>
+    <h4>Instructions</h4>
+    <p>You should already have the Angular 4 solutions repo checked out. 
+        Checkout the following branch but DO NOT look at the code!
+    </p>
+    <p><code>git checkout forms-reactive</code></p>
+    <p> 
+        <a href="https://github.com/Techolution/TB-Angular4" 
+        target="_blank">https://github.com/Techolution/TB-Angular4</a></p>
+    <ol>
+        <li>Start your server if it is not already running and navigate to http://localhost:4200/</li>
+        <li>Create your own Reactive form that works like this one. It does not have to have the same styling but should
+            have the following functionality:
+            <ul>
+                <li>Should display a list of users that can be selected.</li>
+                <li>The user data model should be: id:number, name: string, nickName: string, sex:string, optIn: boolean;</li>
+                <li>Should havae a user detail component that shows the details for the user selected in the user list.</li>
+                <li>The details component should be a reactive form and keep the data model separate from the form model.</li>
+                <li>The user's name in the form should be read only.</li>
+                <li>The nickName should be editable.  It is required as well.</li>
+                <li>The nickName field should display styling feedback to the user to let them know the field is required</li>
+                <li>The optIn should be a checkbox.  It must be selected as true for the form to be valid. </li>
+                <li>The should be a revert button that will cancel the changes the user has made before clicking update and revert to the data model values. </li>
+                <li>When the form is submitted it should update the data model programmatically.</li>
+            </ul>
+        </li>
+    </ol>
+</body>
+</html>
