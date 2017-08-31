@@ -1,6 +1,6 @@
 import { Component, EventEmitter, Input, OnChanges, Output } from '@angular/core';
 import { User } from './user';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { AbstractControl, FormBuilder, FormGroup, Validators, ValidatorFn } from '@angular/forms';
 
 @Component({
     selector: 'user-detail',
@@ -22,7 +22,7 @@ export class UserDetailComponent implements OnChanges {
     createForm() {
         this.userForm = this.fb.group({
             name: '',
-            nickName: ['', Validators.required],
+            nickName: ['', Validators.required  ],
             optIn: [false, Validators.requiredTrue],
             sex: [null, Validators.required]
         });
