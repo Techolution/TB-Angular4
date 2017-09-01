@@ -1,5 +1,6 @@
 /* This is written in plain CSS sytnax.  CSS is also valid SCSS.  Refactor using SCSS sytnax to improve. One
    possible solution is found in the solution.scss file.  */
+
 h1 {
     color:yellow;
 }
@@ -58,14 +59,14 @@ div:hover {
 
 }
 
-div span {
+div > div span {
     color: yellow;
 }
 
-div:hover span {
+div > div:hover span {
     color:#CB866B;
 }
 
-div:hover h4 {
+div > div:hover h4 {
     color:yellow;
 }
