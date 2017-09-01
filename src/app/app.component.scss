@@ -1,22 +1,71 @@
-/* This SCSS needs to be cleaned up a bit to pass linting. I leave it here so you can see IDE linting. */
-$bg-color1: #fafa16;
-
+/* This is written in plain CSS sytnax.  CSS is also valid SCSS.  Refactor using SCSS sytnax to improve. One
+   possible solution is found in the solution.scss file.  */
 h1 {
-    color:green;
+    color:yellow;
 }
 
 p {
-    background-color:#eee;
-    padding:20px;
-    span {
-        display:block;
-        em {
-            color: red;
-            transition: all .5s;
-            &:hover {
-                background-color: $bg-color1;
-                color:black;
-            }
-        }
-    }
+    background-color: #4A1D0C;
+    border: 2px dotted yellow;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    border-radius: 10px;
+    margin: 5px;
+    padding: 20px;
+    transition: all .5s;
+}
+
+p:hover {
+    background-color: #CB866B;
+    -webkit-box-shadow: 2px 2px 18px 0px rgba(74,29,12,1);
+    -moz-box-shadow: 2px 2px 18px 0px rgba(74,29,12,1);
+    box-shadow: 2px 2px 18px 0px rgba(74,29,12,1);
+
+}
+
+p span {
+    color: white;
+    font-weight: bold;
+}
+
+p span a {
+    color:yellow;
+    text-decoration:none;
+}
+
+p span a em {
+    color: greenyellow;
+}
+
+div {
+    background-color: #4A1D0C;
+    border: 2px dotted yellow;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    border-radius: 10px;
+    margin: 5px;
+    padding: 20px;
+    transition: all .5s;
+}
+
+div:hover {
+    background-color: #CB866B;
+    -webkit-box-shadow: 2px 2px 18px 0px rgba(74,29,12,1);
+    -moz-box-shadow: 2px 2px 18px 0px rgba(74,29,12,1);
+    box-shadow: 2px 2px 18px 0px rgba(74,29,12,1);
+
+}
+
+div span {
+    color: yellow;
+}
+
+div:hover span {
+    color:#CB866B;
+}
+
+div:hover h4 {
+    color:yellow;
 }

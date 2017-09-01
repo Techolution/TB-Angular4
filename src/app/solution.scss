@@ -1,0 +1,24 @@
+/* This is written in plain CSS sytnax.  CSS is also valid SCSS.  Refactor using SCSS sytnax to improve: */
+p {
+    background-color: #4A1D0C;
+    margin: 5px;
+    padding: 20px;
+}
+
+p:hover {
+    background-color: #CB866B;
+}
+
+p span {
+    color: white;
+    font-weight: bold;
+}
+
+p span a {
+    color:yellow;
+    text-decoration:none;
+}
+
+p span a em {
+    color: greenyellow;
+}
